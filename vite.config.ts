@@ -1,12 +1,19 @@
 import { VitePWA } from "vite-plugin-pwa";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import legacy from "@vitejs/plugin-legacy";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   base: "/omrp-pwa-test/",
   plugins: [
     react(),
+    legacy({
+      targets: ["chrome>=59"],
+      modernTargets: [
+        "edge>=79, firefox>=67, chrome>=59, safari>=12, chromeAndroid>=64, iOS>=12",
+      ],
+    }),
     VitePWA({
       registerType: "autoUpdate",
       injectRegister: false,
