@@ -18,6 +18,13 @@ function App() {
         </a>
       </div>
       <h1>omrp-pwa-test</h1>
+      <button
+        onClick={() => {
+          window.print();
+        }}
+      >
+        Print Page
+      </button>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
